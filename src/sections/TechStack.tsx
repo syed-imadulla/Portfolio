@@ -1,4 +1,13 @@
 import { motion } from 'framer-motion';
+import { 
+  FaReact, FaHtml5, FaCss3Alt, FaNodeJs, FaDocker, 
+  FaPython, FaJava, FaGitAlt, FaGithub, FaFigma 
+} from 'react-icons/fa';
+import { 
+  SiTailwindcss, SiExpress, SiJavascript, SiTypescript, 
+  SiCplusplus, SiC, SiMysql, SiPostman, SiMongodb
+} from 'react-icons/si';
+import { GrOracle } from 'react-icons/gr';
 
 export function TechStack() {
   const containerVariants = {
@@ -49,12 +58,11 @@ export function TechStack() {
                 <span className="card-category-number">01 / FRONTEND</span>
                 FRONTEND
               </h3>
-              <div className="card-3d-body" style={{ flexGrow: 1 }}></div>
               <div className="card-3d-tags">
-                <span className="card-3d-tag">React.js</span>
-                <span className="card-3d-tag">Tailwind CSS</span>
-                <span className="card-3d-tag">HTML5</span>
-                <span className="card-3d-tag">CSS3</span>
+                <span className="card-3d-tag"><FaReact color="#61DAFB" /> React.js</span>
+                <span className="card-3d-tag"><SiTailwindcss color="#06B6D4" /> Tailwind CSS</span>
+                <span className="card-3d-tag"><FaHtml5 color="#E34F26" /> HTML5</span>
+                <span className="card-3d-tag"><FaCss3Alt color="#1572B6" /> CSS3</span>
               </div>
             </div>
           </motion.div>
@@ -67,11 +75,10 @@ export function TechStack() {
                 <span className="card-category-number">02 / BACKEND & CLOUD</span>
                 BACKEND & CLOUD
               </h3>
-              <div className="card-3d-body" style={{ flexGrow: 1 }}></div>
               <div className="card-3d-tags">
-                <span className="card-3d-tag">Node.js</span>
-                <span className="card-3d-tag">Express.js</span>
-                <span className="card-3d-tag">Docker</span>
+                <span className="card-3d-tag"><FaNodeJs color="#339933" /> Node.js</span>
+                <span className="card-3d-tag"><SiExpress color="#000000" /> Express.js</span>
+                <span className="card-3d-tag"><FaDocker color="#2496ED" /> Docker</span>
               </div>
             </div>
           </motion.div>
@@ -84,14 +91,13 @@ export function TechStack() {
                 <span className="card-category-number">03 / LANGUAGES</span>
                 LANGUAGES
               </h3>
-              <div className="card-3d-body" style={{ flexGrow: 1 }}></div>
               <div className="card-3d-tags">
-                <span className="card-3d-tag">JavaScript</span>
-                <span className="card-3d-tag">TypeScript</span>
-                <span className="card-3d-tag">Python</span>
-                <span className="card-3d-tag">Java</span>
-                <span className="card-3d-tag">C++</span>
-                <span className="card-3d-tag">C</span>
+                <span className="card-3d-tag"><SiJavascript color="#F7DF1E" /> JavaScript</span>
+                <span className="card-3d-tag"><SiTypescript color="#3178C6" /> TypeScript</span>
+                <span className="card-3d-tag"><FaPython color="#3776AB" /> Python</span>
+                <span className="card-3d-tag"><FaJava color="#007396" /> Java</span>
+                <span className="card-3d-tag"><SiCplusplus color="#00599C" /> C++</span>
+                <span className="card-3d-tag"><SiC color="#A8B9CC" /> C</span>
               </div>
             </div>
           </motion.div>
@@ -104,9 +110,10 @@ export function TechStack() {
                 <span className="card-category-number">04 / DATABASE</span>
                 DATABASE
               </h3>
-              <div className="card-3d-body" style={{ flexGrow: 1 }}></div>
               <div className="card-3d-tags">
-                <span className="card-3d-tag">MySQL</span>
+                <span className="card-3d-tag"><SiMysql color="#4479A1" /> MySQL</span>
+                <span className="card-3d-tag"><SiMongodb color="#47A248" /> MongoDB</span>
+                <span className="card-3d-tag"><GrOracle color="#F80000" /> Oracle SQL</span>
               </div>
             </div>
           </motion.div>
@@ -119,12 +126,11 @@ export function TechStack() {
                 <span className="card-category-number">05 / TOOLS</span>
                 TOOLS
               </h3>
-              <div className="card-3d-body" style={{ flexGrow: 1 }}></div>
               <div className="card-3d-tags">
-                <span className="card-3d-tag">Git</span>
-                <span className="card-3d-tag">GitHub</span>
-                <span className="card-3d-tag">Postman</span>
-                <span className="card-3d-tag">Figma</span>
+                <span className="card-3d-tag"><FaGitAlt color="#F05032" /> Git</span>
+                <span className="card-3d-tag"><FaGithub color="#181717" /> GitHub</span>
+                <span className="card-3d-tag"><SiPostman color="#FF6C37" /> Postman</span>
+                <span className="card-3d-tag"><FaFigma color="#F24E1E" /> Figma</span>
               </div>
             </div>
           </motion.div>

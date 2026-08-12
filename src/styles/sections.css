@@ -532,19 +532,35 @@
 .card-3d-tags {
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
   gap: 12px;
-  margin-top: auto;
+  flex-grow: 1;
+  padding-top: 16px;
 }
 
 .card-3d-tag {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   color: #000000;
   background-color: #ffffff;
   border: 1px solid #000000;
-  padding: 6px 12px;
+  padding: 8px 14px;
   letter-spacing: 0.5px;
+  box-shadow: 2px 2px 0px #000000;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+}
+
+.card-3d-tag:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px #000000;
+}
+
+.card-3d-tag svg {
+  font-size: 16px;
 }
 
 /* ==========================================
