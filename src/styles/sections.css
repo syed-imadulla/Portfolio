@@ -758,8 +758,8 @@
   font-weight: 600;
   color: #0f172a;
   background: transparent;
-  border: 1px solid #000000;
-  padding: 4px 10px;
+  border: none;
+  padding: 0;
 }
 
 .project-card-actions {
