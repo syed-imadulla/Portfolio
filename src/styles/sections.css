@@ -970,9 +970,9 @@
   transform: translate(-50%, -50%);
   color: #ffe81f; /* Arcade yellow */
   font-family: 'Press Start 2P', monospace;
-  font-size: 2.5em;
-  font-weight: 400;
-  letter-spacing: 4px;
+  font-size: 2.1em;
+  font-weight: 350;
+  letter-spacing: 5px;
   text-transform: uppercase;
   display: none;
   align-items: center;
