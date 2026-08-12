@@ -7,6 +7,8 @@ import { About } from './sections/About';
 import { TechStack } from './sections/TechStack';
 import { Projects } from './sections/Projects';
 import { Playground } from './sections/Playground';
+import { Contact } from './sections/Contact';
+import { Footer } from './sections/Footer';
 import { TransitionStrip } from './components/TransitionStrip';
 import './styles/variables.css';
 import './styles/globals.css';
@@ -60,7 +62,9 @@ export function App() {
             <TechStack />
             <Projects />
             <Playground />
+            <Contact />
           </main>
+          <Footer />
         </motion.div>
       )}
     </div>
