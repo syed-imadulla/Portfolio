@@ -13,11 +13,11 @@ export function About() {
         >
           <div className="section-meta-label">[ 02 / ABOUT ]</div>
           <h2 className="section-heading">ABOUT <span style={{ color: 'var(--color-blue)' }}>ME</span></h2>
+          <div className="heading-underline"></div>
           <p className="section-subtitle">
             Building practical things<br className="desktop-break" />
             with code, curiosity and consistency.
           </p>
-          <div className="heading-underline"></div>
         </motion.div>
 
         <div className="about-editorial-grid">

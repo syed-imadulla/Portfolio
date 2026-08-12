@@ -37,10 +37,10 @@ export function TechStack() {
         >
           <div className="section-meta-label">[ 03 / STACK ]</div>
           <h2 className="section-heading" style={{ color: '#ffffff' }}>TECH <span style={{ color: 'var(--color-blue)' }}>STACK</span></h2>
+          <div className="heading-underline"></div>
           <p className="section-subtitle" style={{ color: '#94a3b8' }}>
             Tools and technologies I use to build.
           </p>
-          <div className="heading-underline"></div>
         </motion.div>
 
         <motion.div
@@ -120,8 +120,8 @@ export function TechStack() {
           </motion.div>
 
           <motion.div variants={itemVariants} className="card-3d-wrapper">
-            <div className="card-3d-top" style={{'--extrusion-color': '#22d3ee'} as React.CSSProperties}></div>
-            <div className="card-3d-right" style={{'--extrusion-color-dark': '#0891b2'} as React.CSSProperties}></div>
+            <div className="card-3d-top" style={{'--extrusion-color': '#a855f7'} as React.CSSProperties}></div>
+            <div className="card-3d-right" style={{'--extrusion-color-dark': '#7e22ce'} as React.CSSProperties}></div>
             <div className="card-3d-front" style={{'--surface-color': '#f4f9ff', '--text-color': '#000000'} as React.CSSProperties}>
               <h3 className="card-3d-title">
                 <span className="card-category-number">05 / TOOLS</span>
