@@ -8,8 +8,6 @@ const BOOT_LINES = [
   { text: 'loading imadulla.dev ... ', delay: 150 },
   { text: 'identity: SYED IMADULLA', delay: 180, highlight: true },
   { text: 'role: FULL-STACK DEVELOPER', delay: 180, highlight: true },
-  { text: 'loading projects...', delay: 150 },
-  { text: 'loading skills...', delay: 150 },
   { text: 'initializing interface...', delay: 150 },
   { text: 'boot_sequence: SUCCESS', delay: 180, success: true },
 ];
