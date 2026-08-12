@@ -12,7 +12,7 @@ export function About() {
           transition={{ duration: 0.6 }}
         >
           <div className="section-meta-label">[ 02 / ABOUT ]</div>
-          <h2 className="section-heading">ABOUT ME</h2>
+          <h2 className="section-heading">ABOUT <span style={{ color: 'var(--color-blue)' }}>ME</span></h2>
           <p className="section-subtitle">
             Building practical things<br className="desktop-break" />
             with code, curiosity and consistency.
@@ -94,7 +94,6 @@ export function About() {
 
       <div className="about-bottom-transition">
         <div className="geometric-cut-line"></div>
-        <div className="geometric-cut-label">────────────── [ 03 / STACK ] ──────────────</div>
       </div>
     </section>
   );

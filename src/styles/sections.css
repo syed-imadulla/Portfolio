@@ -56,34 +56,19 @@
   bottom: -10px;
 }
 
-.transition-strip-content {
+.transition-strip-content-centered {
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 40px;
+  justify-content: center;
+  padding: 0 24px;
   background-image: url('../assets/background.png');
   background-repeat: repeat;
   background-size: auto;
   border-top: 1px solid rgba(255,255,255,0.05);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-.strip-system-label {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: rgba(255,255,255,0.6);
-  letter-spacing: 2px;
-}
-
-.strip-marquee-container {
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.strip-marquee-text {
+.strip-centered-text {
   font-family: var(--font-mono);
   font-size: 13px;
   font-weight: 600;
@@ -91,40 +76,18 @@
   color: #fff;
   display: flex;
   gap: 20px;
+  align-items: center;
 }
 
 .strip-separator {
   color: var(--color-blue);
 }
 
-.strip-scanline {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: rgba(59, 130, 246, 0.5);
-  transform: translateY(-50%);
-  animation: scan 4s infinite linear;
-  opacity: 0.5;
-}
-
-@keyframes scan {
-  0% { transform: translateY(-50%) translateX(-150%); }
-  100% { transform: translateY(-50%) translateX(150%); }
-}
-
 @media (max-width: 768px) {
   .transition-strip-wrap {
     height: 80px;
   }
-  .transition-strip-content {
-    padding: 0 20px;
-  }
-  .strip-system-label {
-    display: none;
-  }
-  .strip-marquee-text {
+  .strip-centered-text {
     font-size: 11px;
     gap: 12px;
     letter-spacing: 2px;
@@ -171,6 +134,10 @@
   letter-spacing: 1px;
 }
 
+.dark-mode .section-meta-label {
+  color: var(--color-blue);
+}
+
 .section-heading {
   font-size: clamp(28px, 4vw, 40px);
   font-weight: 800;
@@ -191,6 +158,10 @@
   color: #475569;
   margin-top: 16px;
   line-height: 1.6;
+}
+
+.dark-mode .section-subtitle {
+  color: #94a3b8;
 }
 
 /* ==========================================
@@ -431,8 +402,8 @@
 
 .card-3d-wrapper {
   position: relative;
-  margin-top: 14px;
-  margin-right: 14px;
+  margin-top: 16px;
+  margin-right: 16px;
   display: flex;
   flex-direction: column;
   transition: transform 0.2s ease-out;
@@ -445,7 +416,7 @@
 
 .card-3d-front {
   background-color: var(--surface-color, #ffffff);
-  border: 2px solid #000000;
+  border: 2.5px solid #000000;
   padding: 32px 32px;
   position: relative;
   z-index: 3;
@@ -458,12 +429,12 @@
 
 .card-3d-top {
   position: absolute;
-  top: -8px;
+  top: -12px;
   left: 0;
   width: 100%;
-  height: 8px;
+  height: 12px;
   background-color: var(--extrusion-color, #3b82f6);
-  border: 2px solid #000000;
+  border: 2.5px solid #000000;
   border-bottom: none;
   transform: skewX(-45deg);
   transform-origin: bottom;
@@ -474,11 +445,11 @@
 .card-3d-right {
   position: absolute;
   top: 0;
-  right: -8px;
-  width: 8px;
+  right: -12px;
+  width: 12px;
   height: 100%;
   background-color: var(--extrusion-color-dark, #1d4ed8);
-  border: 2px solid #000000;
+  border: 2.5px solid #000000;
   border-left: none;
   transform: skewY(-45deg);
   transform-origin: left;
@@ -570,7 +541,7 @@
   width: 100%;
   position: relative;
   z-index: 10;
-  padding-bottom: 40px;
+  padding-bottom: 100px; /* Increased from 40px to 100px for breathing space */
 }
 
 .about-editorial-grid {
@@ -590,19 +561,17 @@
 
 /* About Bottom Transition */
 .about-bottom-transition {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  margin-bottom: -40px;
+  height: 1px;
   z-index: 20;
 }
 
 .geometric-cut-line {
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 0;
   width: 100%;
   height: 1px;
@@ -610,15 +579,19 @@
 }
 
 .geometric-cut-label {
-  position: relative;
-  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
   padding: 0 24px;
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13px;
   color: var(--color-blue);
   letter-spacing: 2px;
-  font-weight: 600;
+  font-weight: 700;
   z-index: 2;
+  white-space: nowrap;
 }
 
 /* ==========================================

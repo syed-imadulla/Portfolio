@@ -35,7 +35,8 @@ export function TechStack() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="section-heading" style={{ color: '#ffffff' }}>TECH STACK</h2>
+          <div className="section-meta-label">[ 03 / STACK ]</div>
+          <h2 className="section-heading" style={{ color: '#ffffff' }}>TECH <span style={{ color: 'var(--color-blue)' }}>STACK</span></h2>
           <p className="section-subtitle" style={{ color: '#94a3b8' }}>
             Tools and technologies I use to build.
           </p>
