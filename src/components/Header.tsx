@@ -10,8 +10,7 @@ const NAV_ITEMS: NavItem[] = [
   { label: 'About', href: '#about' },
   { label: 'Stack', href: '#stack' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Experiments', href: '#experiments' },
-  { label: 'Journey', href: '#journey' },
+  { label: 'Playground', href: '#playground' },
   { label: 'Contact', href: '#contact' },
 ];
 

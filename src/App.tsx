@@ -6,6 +6,7 @@ import { Hero } from './sections/Hero';
 import { About } from './sections/About';
 import { TechStack } from './sections/TechStack';
 import { Projects } from './sections/Projects';
+import { Playground } from './sections/Playground';
 import { TransitionStrip } from './components/TransitionStrip';
 import './styles/variables.css';
 import './styles/globals.css';
@@ -58,6 +59,7 @@ export function App() {
             <About />
             <TechStack />
             <Projects />
+            <Playground />
           </main>
         </motion.div>
       )}

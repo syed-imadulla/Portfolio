@@ -26,7 +26,7 @@ export function TechStack() {
   };
 
   return (
-    <section id="tech-stack" className="tech-stack-outer-wrap dark-mode">
+    <section id="stack" className="tech-stack-outer-wrap dark-mode">
       <div className="section-container">
         <motion.div
           className="section-header-block-centered"
