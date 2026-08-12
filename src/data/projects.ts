@@ -8,6 +8,7 @@ export interface Project {
   github: string;
   live?: string;
   featured: boolean;
+  architectureDetails?: Record<string, string>;
 }
 
 export const projects: Project[] = [
@@ -16,8 +17,18 @@ export const projects: Project[] = [
     number: '01',
     title: 'STUDYFLOW AI',
     subtitle: 'AI-Powered Student Productivity Platform',
-    description: 'AI-powered student productivity platform built to streamline task management, study planning, focus sessions, and productivity tracking.',
-    technologies: ['React.js', 'Node.js', 'Express.js', 'MySQL'],
+    description: 'An AI companion that guides students from goals to achievement through intelligent planning, focused work, and personalized guidance.',
+    technologies: ['Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'HTML', 'JavaScript', 'Tailwind CSS'],
+    architectureDetails: {
+      "Backend Runtime": "Node.js + Express",
+      "Database": "MongoDB with Mongoose",
+      "Architecture": "REST API with an Intelligence Layer",
+      "Frontend Core": "Vanilla HTML, CSS, JavaScript",
+      "Styling": "Tailwind CSS",
+      "State Management": "Custom global store (window.SF_STORE)",
+      "Application Architecture": "Multi-page application (MPA)",
+      "Pages": "workspace.html, dashboard.html, planner.html, idealab.html and other supporting pages"
+    },
     github: 'https://github.com/syed-imadulla/SudyFlow-Ai',
     featured: true,
   },

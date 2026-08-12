@@ -22,31 +22,47 @@ export function Projects() {
             <div className="card-3d-wrapper featured-project-layout">
               <div className="card-3d-top"></div>
               <div className="card-3d-right"></div>
-              <div className="card-3d-front">
-                <div className="project-card-header">
-                  <div className="project-number">{featuredProject.number} / FEATURED</div>
-                </div>
-                <h3 className="project-title">{featuredProject.title}</h3>
-                <div className="project-subtitle">{featuredProject.subtitle}</div>
-                <p className="project-description">{featuredProject.description}</p>
-                
-                <div className="project-tech-tags">
-                  {featuredProject.technologies.map(tech => (
-                    <span key={tech} className="tech-tag-compact">[ {tech} ]</span>
-                  ))}
+              <div className="card-3d-front featured-front">
+                <div className="featured-left">
+                  <div className="project-card-header">
+                    <div className="project-number">{featuredProject.number} / FEATURED</div>
+                  </div>
+                  <h3 className="project-title">{featuredProject.title}</h3>
+                  <div className="project-subtitle">{featuredProject.subtitle}</div>
+                  
+                  <hr className="project-divider" />
+
+                  <p className="project-description">{featuredProject.description}</p>
+                  
+                  <div className="project-tech-tags">
+                    {featuredProject.technologies.map(tech => (
+                      <span key={tech} className="tech-tag-compact">[ {tech} ]</span>
+                    ))}
+                  </div>
+
+                  <div className="project-card-actions" style={{ marginTop: 'auto' }}>
+                    {featuredProject.live && (
+                      <a href={featuredProject.live} target="_blank" rel="noopener noreferrer" className="btn-primary">
+                        LIVE DEMO <FaExternalLinkAlt size={12} style={{ marginLeft: '8px' }} />
+                      </a>
+                    )}
+                    {featuredProject.github && (
+                      <a href={featuredProject.github} target="_blank" rel="noopener noreferrer" className="btn-primary">
+                        GITHUB <FaGithub size={14} style={{ marginLeft: '8px' }} />
+                      </a>
+                    )}
+                  </div>
                 </div>
 
-                <div className="project-card-actions">
-                  {featuredProject.live && (
-                    <a href={featuredProject.live} target="_blank" rel="noopener noreferrer" className="btn-primary">
-                      LIVE DEMO <FaExternalLinkAlt size={12} style={{ marginLeft: '8px' }} />
-                    </a>
-                  )}
-                  {featuredProject.github && (
-                    <a href={featuredProject.github} target="_blank" rel="noopener noreferrer" className="btn-primary">
-                      GITHUB <FaGithub size={14} style={{ marginLeft: '8px' }} />
-                    </a>
-                  )}
+                <div className="featured-divider-vertical"></div>
+
+                <div className="featured-right">
+                  {featuredProject.architectureDetails && Object.entries(featuredProject.architectureDetails).map(([key, value]) => (
+                    <div key={key} className="arch-spec-block">
+                      <div className="arch-spec-label">{key}</div>
+                      <div className="arch-spec-value">{value}</div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -62,6 +78,9 @@ export function Projects() {
                 </div>
                 <h3 className="project-title">{project.title}</h3>
                 <div className="project-subtitle">{project.subtitle}</div>
+                
+                <hr className="project-divider" />
+                
                 <p className="project-description">{project.description}</p>
                 
                 <div className="project-tech-tags">
