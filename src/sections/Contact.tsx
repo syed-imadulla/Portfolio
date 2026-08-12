@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 // ── Configure your contact details here ─────────────────────────────────────
 const CONTACT = {
-  email: 'syedimadulla.work@gmail.com', // ← update if needed
+  email: 'imadulla.s45@gmail.com', // updated email
   github: 'https://github.com/syed-imadulla',
   linkedin: 'https://www.linkedin.com/in/syed-imadulla', // ← update if needed
 };
@@ -59,7 +59,7 @@ export function Contact() {
             <div className="contact-card-right">
               <a
                 href={`mailto:${CONTACT.email}`}
-                className="btn-primary contact-action-btn"
+                className="btn-primary"
                 aria-label="Email me"
               >
                 EMAIL ME <FaEnvelope size={13} style={{ marginLeft: '10px' }} />
@@ -68,7 +68,7 @@ export function Contact() {
                 href={CONTACT.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary contact-action-btn"
+                className="btn-primary"
                 aria-label="GitHub profile"
               >
                 GITHUB <FaGithub size={14} style={{ marginLeft: '10px' }} />
@@ -77,7 +77,7 @@ export function Contact() {
                 href={CONTACT.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary contact-action-btn"
+                className="btn-primary"
                 aria-label="LinkedIn profile"
               >
                 LINKEDIN <FaLinkedin size={14} style={{ marginLeft: '10px' }} />

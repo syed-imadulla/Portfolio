@@ -80,6 +80,15 @@ export function Footer() {
             >
               LINKEDIN ↗
             </a>
+            <a
+              href="/Syed_Imadulla_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social-link"
+              aria-label="Resume"
+            >
+              RESUME ↗
+            </a>
           </div>
         </div>
 

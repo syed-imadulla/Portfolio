@@ -62,6 +62,7 @@ export function App() {
             <TechStack />
             <Projects />
             <Playground />
+            <TransitionStrip />
             <Contact />
           </main>
           <Footer />
