@@ -497,3 +497,36 @@
   font-weight: bold;
   letter-spacing: 1.5px;
 }
+
+/* ==========================================
+   Back To Top Button - 3D Isometric Box
+   ========================================== */
+.back-to-top-3d {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(15px) scale(0.95);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  outline: none;
+}
+
+.back-to-top-3d.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.button-svg-wrapper {
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.back-to-top-3d:hover .button-svg-wrapper {
+  transform: translateY(-6px) scale(1.05);
+}

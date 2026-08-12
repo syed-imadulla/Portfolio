@@ -10,6 +10,7 @@ import { Playground } from './sections/Playground';
 import { Contact } from './sections/Contact';
 import { Footer } from './sections/Footer';
 import { TransitionStrip } from './components/TransitionStrip';
+import { BackToTopButton } from './components/BackToTopButton';
 import './styles/variables.css';
 import './styles/globals.css';
 import './styles/components.css';
@@ -65,6 +66,7 @@ export function App() {
             <TransitionStrip />
             <Contact />
           </main>
+          <BackToTopButton />
           <Footer />
         </motion.div>
       )}
