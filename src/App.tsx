@@ -63,7 +63,7 @@ export function App() {
             <TechStack />
             <Projects />
             <Playground />
-            <TransitionStrip />
+            <TransitionStrip slim={true} />
             <Contact />
           </main>
           <BackToTopButton />

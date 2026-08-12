@@ -38,6 +38,11 @@
   z-index: 20;
 }
 
+.transition-strip-wrap.slim {
+  height: 0px;
+  border-top: none;
+}
+
 .torn-edge-top, .torn-edge-bottom {
   position: absolute;
   left: 0;
