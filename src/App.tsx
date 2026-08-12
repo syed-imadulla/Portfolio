@@ -5,6 +5,7 @@ import { TerminalIntro } from './components/TerminalIntro';
 import { Hero } from './sections/Hero';
 import { About } from './sections/About';
 import { TechStack } from './sections/TechStack';
+import { Projects } from './sections/Projects';
 import { TransitionStrip } from './components/TransitionStrip';
 import './styles/variables.css';
 import './styles/globals.css';
@@ -56,6 +57,7 @@ export function App() {
             <TransitionStrip />
             <About />
             <TechStack />
+            <Projects />
           </main>
         </motion.div>
       )}

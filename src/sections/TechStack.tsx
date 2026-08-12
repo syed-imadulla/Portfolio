@@ -138,6 +138,7 @@ export function TechStack() {
 
         </motion.div>
       </div>
+      <div className="torn-edge-bottom"></div>
     </section>
   );
 }
