@@ -35,7 +35,7 @@ export function About() {
               <h3 className="card-3d-title">WHO IS SYED IMADULLA?</h3>
               <div className="card-3d-body">
                 <p>
-                  Computer Science undergraduate focused on building practical software and understanding how things work under the hood. I enjoy turning ideas into clean, responsive web applications while continuously improving my problem-solving and engineering skills.
+                  I am Syed Imadulla, a Computer Science Engineering student and full-stack developer based in Karnataka, India, focused on building practical software and understanding how things work under the hood. I enjoy turning ideas into clean, responsive web applications while continuously improving my problem-solving and engineering skills.
                 </p>
                 <div className="about-sub-section">
                   <div className="about-sub-title">CURRENTLY FOCUSED ON</div>
@@ -68,7 +68,7 @@ export function About() {
               <h3 className="card-3d-title">WHAT I BUILD</h3>
               <div className="card-3d-body">
                 <p>
-                  I build practical web applications that combine thoughtful interfaces with reliable functionality. My work spans frontend development, full-stack systems, APIs, databases, and responsive user experiences.
+                  I build practical web applications that combine thoughtful interfaces with reliable functionality. My work spans frontend development, full-stack systems, APIs, databases, and responsive user experiences. I also practice Data Structures and Algorithms in C++, focusing on problem solving, algorithmic thinking, and writing efficient solutions.
                 </p>
                 <div className="about-sub-section">
                   <div className="about-sub-title">HOW I APPROACH DEVELOPMENT</div>

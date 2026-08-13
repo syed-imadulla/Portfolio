@@ -112,7 +112,7 @@ export function Hero() {
                 <motion.h1 className="hero-title" variants={textItemVariants}>SYED IMADULLA</motion.h1>
                 
                 <div className="hero-role-wrapper">
-                  <motion.div className="hero-role" variants={textItemVariants}>FULL-STACK DEVELOPER</motion.div>
+                  <motion.h2 className="hero-role" variants={textItemVariants}>FULL-STACK DEVELOPER</motion.h2>
                 </div>
 
                 <motion.p className="hero-description" variants={textItemVariants}>
@@ -121,9 +121,10 @@ export function Hero() {
                 </motion.p>
                 
                 <motion.div className="hero-actions" variants={textItemVariants}>
-                  <a href="#projects" className="btn-primary">EXPLORE MY WORK</a>
+                  <a href="#projects" className="btn-primary" aria-label="Explore my projects and work">EXPLORE MY WORK</a>
                   <a href="#contact" className="btn-secondary">
-                    GET IN TOUCH
+                    <span aria-hidden="true">GET IN TOUCH</span>
+                    <span className="sr-only">Contact me</span>
                     <svg className="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                       <polyline points="22,6 12,13 2,6"></polyline>

@@ -55,13 +55,13 @@ export function Projects() {
 
                   <div className="project-card-actions" style={{ marginTop: 'auto' }}>
                     {featuredProject.live && (
-                      <a href={featuredProject.live} target="_blank" rel="noopener noreferrer" className="btn-primary">
-                        LIVE DEMO <FaExternalLinkAlt size={12} style={{ marginLeft: '8px' }} />
+                      <a href={featuredProject.live} target="_blank" rel="noopener noreferrer" className="btn-primary" aria-label={`View live demo for ${featuredProject.title}`}>
+                        LIVE DEMO <FaExternalLinkAlt size={12} style={{ marginLeft: '8px' }} aria-hidden="true" />
                       </a>
                     )}
                     {featuredProject.github && (
-                      <a href={featuredProject.github} target="_blank" rel="noopener noreferrer" className="btn-primary">
-                        GITHUB <FaGithub size={14} style={{ marginLeft: '8px' }} />
+                      <a href={featuredProject.github} target="_blank" rel="noopener noreferrer" className="btn-primary" aria-label={`View GitHub repository for ${featuredProject.title}`}>
+                        GITHUB <FaGithub size={14} style={{ marginLeft: '8px' }} aria-hidden="true" />
                       </a>
                     )}
                   </div>
@@ -111,13 +111,13 @@ export function Projects() {
 
                 <div className="project-card-actions" style={{ marginTop: 'auto' }}>
                   {project.live && (
-                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="btn-primary">
-                      LIVE <FaExternalLinkAlt size={12} style={{ marginLeft: '8px' }} />
+                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="btn-primary" aria-label={`View live demo for ${project.title}`}>
+                      LIVE <FaExternalLinkAlt size={12} style={{ marginLeft: '8px' }} aria-hidden="true" />
                     </a>
                   )}
                   {project.github && (
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn-primary">
-                      GITHUB <FaGithub size={14} style={{ marginLeft: '8px' }} />
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn-primary" aria-label={`View GitHub repository for ${project.title}`}>
+                      GITHUB <FaGithub size={14} style={{ marginLeft: '8px' }} aria-hidden="true" />
                     </a>
                   )}
                 </div>
