@@ -235,12 +235,11 @@
   color: #ffffff;
   font-family: var(--font-mono);
   font-size: 16px;
-  font-weight: 500;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 12px;
+  padding: 8px;
   transition: color 0.2s ease;
   outline: none;
 }
@@ -272,7 +271,7 @@
 
 .dropdown-nav {
   width: 100%;
-  margin: auto 0;
+  flex: 1;
 }
 
 .dropdown-nav-list {
@@ -355,7 +354,7 @@
   font-family: var(--font-mono);
   font-size: 12px;
   color: rgba(255, 255, 255, 0.3);
-  margin-top: 0;
+  margin-top: 2rem;
   text-align: left;
 }
 
