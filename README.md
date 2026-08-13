@@ -1,75 +1,113 @@
-# React + TypeScript + Vite
+# Syed Imadulla
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Computer Science undergraduate and Full-Stack Web Developer. 
 
-Currently, two official plugins are available:
+This repository contains my personal portfolio website, designed to act as an engineering workspace and technical specification sheet rather than a conventional marketing portfolio. It reflects my focus on problem-solving, data structures, and practical software development.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Design Philosophy
 
-## React Compiler
+The visual identity of this portfolio intentionally avoids generic modern developer portfolio trends (e.g., massive floating 3D mockups, heavy glassmorphism, or generic SaaS templates). 
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Instead, the design is deeply inspired by technical documentation, engineering interfaces, editorial layouts, blueprint grid systems, and physical print aesthetics (like my personal CodeFury 9.0 inspired design language). It is meant to feel like an authentic, technical workspace—utilizing strict monospace typography, off-white technical grids, sharp borders, physical offset shadows, and high-contrast marker colors. 
 
-## Expanding the ESLint configuration
+## Selected Projects
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The portfolio highlights a curated selection of my work:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 01 / StudyFlow AI
+**AI-Powered Student Productivity Platform**
+An AI-powered productivity platform designed to help students turn goals into structured plans, focused work sessions, and consistent progress.
+- **Backend:** Node.js, Express
+- **Database:** MongoDB, Mongoose
+- **Frontend:** HTML, CSS, JavaScript, Tailwind CSS
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 02 / Smart Library Book Tracker
+**Full-Stack Library Management System**
+A complete library management system for book inventory and tracking, bridging a C++ backend architecture with a responsive web dashboard.
+- **Tech:** C++, JavaScript, HTML, CSS
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 03 / Minis
+**Creative Frontend Experiments**
+Small interactive web experiments and creative mini-applications exploring frontend interactions, state management, drag-and-drop mechanics, and animations.
+- **Tech:** HTML5, CSS3, Vanilla JavaScript
 
+## Tech Stack
+
+**Frontend**
+React.js, Tailwind CSS, HTML5, CSS3
+
+**Backend & Cloud**
+Node.js, Express.js, Docker
+
+**Languages**
+JavaScript, TypeScript, Python, Java, C++, C
+
+**Database**
+MySQL, MongoDB, Oracle SQL
+
+**Tools**
+Git, GitHub, Postman, Figma
+
+## Problem Solving & DSA
+
+I am actively building a rigorous foundation in Data Structures & Algorithms using **C++**. My core focus areas include:
+- Arrays & Strings
+- Two Pointers & Sliding Window
+- Stacks & Queues
+- Linked Lists
+- Binary Search & Recursion
+- Trees & Graphs
+- Sorting, Searching, and Hashing
+
+## Portfolio Sections
+
+- **Hero:** Introductory overview and visual identity anchor.
+- **About:** Background, current focus, and development approach.
+- **Tech Stack:** Categorized matrix of my technical proficiencies.
+- **Selected Works:** Detailed breakdown of core engineering projects.
+- **Playground (Minis):** A showcase of smaller frontend experiments.
+- **Contact:** Links and professional profiles.
+
+## Local Development
+
+This project is built using **React, TypeScript, and Vite**. 
+
+To run this project locally:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/syed-imadulla/imadulla-portfolio.git
+   ```
+2. Navigate into the directory:
+   ```bash
+   cd imadulla-portfolio
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## Production Build
+
+To verify code quality and build the production bundle:
+
+```bash
+# Run ESLint validation
+npm run lint
+
+# Compile TypeScript and build for production
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Deployment
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+The application is bundled using Vite and can be statically hosted on platforms like Netlify, Vercel, or GitHub Pages by deploying the `dist` directory.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Contact
 
-```
+- **GitHub:** [github.com/syed-imadulla](https://github.com/syed-imadulla)
+- **LinkedIn:** [linkedin.com/in/syed-imadulla](https://www.linkedin.com/in/syed-imadulla)
