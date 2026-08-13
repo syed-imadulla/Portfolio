@@ -1,6 +1,14 @@
-# Syed Imadulla
+<div align="center">
+  <img src="public/favicon.svg" alt="SI Logo" width="120" />
+  
+  # ~ SYED _ IMADULLA
+  
+  ### `BUILD / LEARN / EXPERIMENT / SHIP`
+</div>
 
-Computer Science undergraduate and Full-Stack Web Developer. 
+<br/>
+
+Computer Science undergraduate and Full-Stack Web Developer.
 
 This repository contains my personal portfolio website, designed to act as an engineering workspace and technical specification sheet rather than a conventional marketing portfolio. It reflects my focus on problem-solving, data structures, and practical software development.
 
