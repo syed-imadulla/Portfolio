@@ -2,21 +2,19 @@
   <img src="public/favicon.svg" alt="SI Logo" width="120" />
   
   # ~ SYED _ IMADULLA
-  
-  ### `BUILD / LEARN / EXPERIMENT / SHIP`
 </div>
 
 <br/>
 
 Computer Science undergraduate and Full-Stack Web Developer.
 
-This repository contains my personal portfolio website, designed to act as an engineering workspace and technical specification sheet rather than a conventional marketing portfolio. It reflects my focus on problem-solving, data structures, and practical software development.
+This repository contains my personal portfolio website, designed to act as an engineering workspace and technical specification sheet rather than a conventional marketing portfolio. It reflects my core focus on problem-solving, data structures, and practical software development.
 
 ## Design Philosophy
 
 The visual identity of this portfolio intentionally avoids generic modern developer portfolio trends (e.g., massive floating 3D mockups, heavy glassmorphism, or generic SaaS templates). 
 
-Instead, the design is deeply inspired by technical documentation, engineering interfaces, editorial layouts, blueprint grid systems, and physical print aesthetics (like my personal CodeFury 9.0 inspired design language). It is meant to feel like an authentic, technical workspace—utilizing strict monospace typography, off-white technical grids, sharp borders, physical offset shadows, and high-contrast marker colors. 
+Instead, the design is deeply inspired by technical documentation, engineering interfaces, editorial layouts, blueprint grid systems, and physical print aesthetics. It is meant to feel like an authentic, technical workspace—utilizing strict monospace typography, off-white technical grids, sharp borders, physical offset shadows, and high-contrast marker colors.
 
 ## Selected Projects
 
