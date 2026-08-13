@@ -9,6 +9,7 @@ export interface Project {
   live?: string;
   featured: boolean;
   architectureDetails?: Record<string, string>;
+  coreFeatures?: string[];
 }
 
 export const projects: Project[] = [
@@ -17,18 +18,22 @@ export const projects: Project[] = [
     number: '01',
     title: 'STUDYFLOW AI',
     subtitle: 'AI-Powered Student Productivity Platform',
-    description: 'An AI companion that guides students from goals to achievement through intelligent planning, focused work, and personalized guidance.',
-    technologies: ['Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'HTML', 'JavaScript', 'Tailwind CSS'],
+    description: 'An AI-powered productivity platform designed to help students turn goals into structured plans, focused work sessions, and consistent progress.',
+    technologies: ['NODE.JS', 'EXPRESS', 'MONGODB', 'MONGOOSE', 'JAVASCRIPT', 'TAILWIND CSS'],
     architectureDetails: {
-      "Backend Runtime": "Node.js + Express",
-      "Database": "MongoDB with Mongoose",
-      "Architecture": "REST API with an Intelligence Layer",
-      "Frontend Core": "Vanilla HTML, CSS, JavaScript",
-      "Styling": "Tailwind CSS",
-      "State Management": "Custom global store (window.SF_STORE)",
-      "Application Architecture": "Multi-page application (MPA)",
-      "Pages": "workspace.html, dashboard.html, planner.html, idealab.html and other supporting pages"
+      "BACKEND": "Node.js + Express",
+      "DATABASE": "MongoDB + Mongoose",
+      "ARCHITECTURE": "REST API + Intelligence Layer",
+      "FRONTEND": "HTML + CSS + JavaScript",
+      "STYLING": "Tailwind CSS",
+      "APPLICATION": "Multi-page student productivity platform"
     },
+    coreFeatures: [
+      'AI-assisted planning',
+      'Focus & productivity tools',
+      'Student dashboard',
+      'Personalized guidance'
+    ],
     github: 'https://github.com/syed-imadulla/SudyFlow-Ai',
     featured: true,
   },

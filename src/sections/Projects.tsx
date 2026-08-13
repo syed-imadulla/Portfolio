@@ -1,5 +1,6 @@
 import { projects } from '../data/projects';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 export function Projects() {
   const featuredProject = projects.find(p => p.featured);
@@ -8,18 +9,30 @@ export function Projects() {
   return (
     <section id="projects" className="projects-outer-wrap white-mode">
       <div className="section-container">
-        <div className="section-header-block-centered">
+        <motion.div
+          className="section-header-block-centered"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="section-meta-label">[ 04 / PROJECTS ]</div>
           <h2 className="section-heading">SELECTED <span style={{ color: 'var(--color-blue)' }}>WORK</span></h2>
           <div className="heading-underline"></div>
           <p className="section-subtitle">
             Projects I've built to solve real problems.
           </p>
-        </div>
+        </motion.div>
 
         <div className="projects-grid">
           {featuredProject && (
-            <div className="card-3d-wrapper featured-project-layout">
+            <motion.div 
+              className="card-3d-wrapper featured-project-layout"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5 }}
+            >
               <div className="card-3d-top"></div>
               <div className="card-3d-right"></div>
               <div className="card-3d-front featured-front">
@@ -65,11 +78,18 @@ export function Projects() {
                   ))}
                 </div>
               </div>
-            </div>
+              </motion.div>
           )}
 
-          {otherProjects.map(project => (
-            <div key={project.id} className="card-3d-wrapper">
+          {otherProjects.map((project, index) => (
+            <motion.div 
+              key={project.id} 
+              className="card-3d-wrapper"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
+            >
               <div className="card-3d-top"></div>
               <div className="card-3d-right"></div>
               <div className="card-3d-front">
@@ -102,7 +122,7 @@ export function Projects() {
                   )}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

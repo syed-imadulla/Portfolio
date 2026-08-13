@@ -895,6 +895,15 @@
   border: 1px solid #000;
   padding: 4px 8px;
   text-transform: uppercase;
+  box-shadow: 2px 2px 0px #000000;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+}
+
+.tech-tag-compact:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px #000000;
 }
 
 .project-card-actions {

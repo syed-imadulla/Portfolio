@@ -35,22 +35,22 @@ export function About() {
               <h3 className="card-3d-title">WHO IS SYED IMADULLA?</h3>
               <div className="card-3d-body">
                 <p>
-                  Computer Science undergraduate with a strong interest in frontend and full-stack development. I enjoy turning ideas into responsive, useful web experiences and exploring the systems behind them.
+                  Computer Science undergraduate focused on building practical software and understanding how things work under the hood. I enjoy turning ideas into clean, responsive web applications while continuously improving my problem-solving and engineering skills.
                 </p>
                 <div className="about-sub-section">
                   <div className="about-sub-title">CURRENTLY FOCUSED ON</div>
                   <ul className="about-sub-list">
-                    <li>Frontend development</li>
-                    <li>Full-stack applications</li>
-                    <li>Responsive UI</li>
-                    <li>Building useful web products</li>
+                    <li>Frontend & full-stack development</li>
+                    <li>Data Structures & Algorithms</li>
+                    <li>Problem solving & competitive coding</li>
+                    <li>Building practical web applications</li>
                   </ul>
                 </div>
               </div>
               <div className="card-3d-tags">
                 <span className="card-3d-tag">[ FRONTEND ]</span>
                 <span className="card-3d-tag">[ FULL-STACK ]</span>
-                <span className="card-3d-tag">[ WEB APPLICATIONS ]</span>
+                <span className="card-3d-tag">[ DSA ]</span>
               </div>
             </div>
           </motion.div>
@@ -68,23 +68,24 @@ export function About() {
               <h3 className="card-3d-title">WHAT I BUILD</h3>
               <div className="card-3d-body">
                 <p>
-                  I enjoy building practical web applications with a focus on frontend development, full-stack systems, responsive interfaces and MERN-based application development.
+                  I build practical web applications that combine thoughtful interfaces with reliable functionality. My work spans frontend development, full-stack systems, APIs, databases, and responsive user experiences.
                 </p>
                 <div className="about-sub-section">
-                  <div className="about-sub-title">MY APPROACH</div>
+                  <div className="about-sub-title">HOW I APPROACH DEVELOPMENT</div>
                   <ul className="about-sub-list">
-                    <li>Build useful things.</li>
-                    <li>Keep interfaces clean.</li>
-                    <li>Learn by building.</li>
-                    <li>Improve continuously.</li>
+                    <li>Understand the problem first.</li>
+                    <li>Build simple, useful solutions.</li>
+                    <li>Practice DSA to strengthen problem-solving.</li>
+                    <li>Keep interfaces clean and responsive.</li>
+                    <li>Learn by building and improving.</li>
                   </ul>
                 </div>
               </div>
               <div className="card-3d-tags">
-                <span className="card-3d-tag">[ FRONTEND ]</span>
+                <span className="card-3d-tag">[ WEB APPS ]</span>
                 <span className="card-3d-tag">[ FULL-STACK ]</span>
                 <span className="card-3d-tag">[ RESPONSIVE UI ]</span>
-                <span className="card-3d-tag">[ MERN ]</span>
+                <span className="card-3d-tag">[ PROBLEM SOLVING ]</span>
               </div>
             </div>
           </motion.div>
