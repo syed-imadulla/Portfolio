@@ -172,6 +172,7 @@
   transition: color 0.2s ease;
   user-select: none;
   -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .menu-toggle-btn:hover {
@@ -216,6 +217,7 @@
   border-left: 1px solid rgba(255, 255, 255, 0.1);
   user-select: none;
   -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .dropdown-menu-overlay.show {
