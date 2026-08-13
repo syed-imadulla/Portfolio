@@ -5,6 +5,8 @@ const FRAMES = {
     'wave/wave1.png', 'wave/wave2.png', 'wave/wave3.png', 'wave/wave2.png', 'wave/wave1.png',
     'wave/wave2.png', 'wave/wave3.png', 'wave/wave2.png', 'wave/wave1.png',
     'wave/wave2.png', 'wave/wave3.png', 'wave/wave2.png', 'wave/wave1.png', 
+    'wave/wave2.png', 'wave/wave3.png', 'wave/wave2.png', 'wave/wave1.png',
+    'wave/wave2.png', 'wave/wave3.png', 'wave/wave2.png', 'wave/wave1.png',
     'wave/wave2.png', 'wave/wave3.png'
   ],
   scrollDown: [
