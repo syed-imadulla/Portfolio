@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { DeveloperAnimation } from '../components/DeveloperAnimation/DeveloperAnimation';
 
 export function Hero() {
   const [isMobile, setIsMobile] = useState(false);
@@ -103,35 +104,40 @@ export function Hero() {
           <motion.div className="hero-content" variants={contentMaskVariants} initial="hidden" animate={startAnimation ? "visible" : "hidden"}>
             {/* Technical Micro-labels */}
             <motion.div className="micro-label left-label" variants={textItemVariants} aria-hidden="true">[ 01 / HOME ]</motion.div>
-            <motion.div className="micro-label right-label" variants={textItemVariants} aria-hidden="true">ACTV</motion.div>
+            <motion.div className="micro-label right-label" variants={textItemVariants} aria-hidden="true">● ACTV</motion.div>
 
-            <motion.div className="hero-greeting" variants={textItemVariants}>HELLO, I'M</motion.div>
-            <motion.h1 className="hero-title" variants={textItemVariants}>SYED IMADULLA</motion.h1>
-            
-            <div className="hero-role-wrapper">
-              <motion.div className="hero-role" variants={textItemVariants}>FULL-STACK DEVELOPER</motion.div>
-              <motion.div className="hero-illustration-container" variants={textItemVariants}>
-                  <div className="hero-illustration-placeholder">
-                      [TINY ILLUSTRATION PLACEHOLDER]
-                  </div>
-              </motion.div>
+            <div className="hero-grid">
+              <div className="hero-text-column">
+                <motion.div className="hero-greeting" variants={textItemVariants}>HELLO, I'M</motion.div>
+                <motion.h1 className="hero-title" variants={textItemVariants}>SYED IMADULLA</motion.h1>
+                
+                <div className="hero-role-wrapper">
+                  <motion.div className="hero-role" variants={textItemVariants}>FULL-STACK DEVELOPER</motion.div>
+                </div>
+
+                <motion.p className="hero-description" variants={textItemVariants}>
+                  I build full-stack web applications that solve real problems,<br className="desktop-break" />
+                  from polished interfaces to APIs, databases and deployment.
+                </motion.p>
+                
+                <motion.div className="hero-actions" variants={textItemVariants}>
+                  <a href="#projects" className="btn-primary">EXPLORE MY WORK</a>
+                  <a href="#contact" className="btn-secondary">
+                    GET IN TOUCH
+                    <svg className="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                  </a>
+                </motion.div>
+              </div>
+
+              <div className="hero-illustration-column">
+                <motion.div className="hero-animation-slot" variants={textItemVariants}>
+                  <DeveloperAnimation />
+                </motion.div>
+              </div>
             </div>
-
-            <motion.p className="hero-description" variants={textItemVariants}>
-              I build full-stack web applications that solve real problems,<br className="desktop-break" />
-              from polished interfaces to APIs, databases and deployment.
-            </motion.p>
-            
-            <motion.div className="hero-actions" variants={textItemVariants}>
-              <a href="#projects" className="btn-primary">EXPLORE MY WORK</a>
-              <a href="#contact" className="btn-secondary">
-                GET IN TOUCH
-                <svg className="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-              </a>
-            </motion.div>
           </motion.div>
         </div>
       </div>
