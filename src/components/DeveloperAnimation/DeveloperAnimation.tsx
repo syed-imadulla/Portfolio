@@ -2,29 +2,29 @@ import { useEffect, useRef, useState } from 'react';
 
 const FRAMES = {
   initialLoad: [
-    'wave/wave1.png', 'wave/wave2.png', 'wave/wave3.png', 'wave/wave2.png', 'wave/wave1.png',
-    'wave/wave2.png', 'wave/wave3.png', 'wave/wave2.png', 'wave/wave1.png',
-    'wave/wave2.png', 'wave/wave3.png', 'wave/wave2.png', 'wave/wave1.png', 
-    'wave/wave2.png', 'wave/wave3.png', 'wave/wave2.png', 'wave/wave1.png',
-    'wave/wave2.png', 'wave/wave3.png', 'wave/wave2.png', 'wave/wave1.png',
-    'wave/wave2.png', 'wave/wave3.png'
+    'wave/wave1.webp', 'wave/wave2.webp', 'wave/wave3.webp', 'wave/wave2.webp', 'wave/wave1.webp',
+    'wave/wave2.webp', 'wave/wave3.webp', 'wave/wave2.webp', 'wave/wave1.webp',
+    'wave/wave2.webp', 'wave/wave3.webp', 'wave/wave2.webp', 'wave/wave1.webp', 
+    'wave/wave2.webp', 'wave/wave3.webp', 'wave/wave2.webp', 'wave/wave1.webp',
+    'wave/wave2.webp', 'wave/wave3.webp', 'wave/wave2.webp', 'wave/wave1.webp',
+    'wave/wave2.webp', 'wave/wave3.webp'
   ],
   scrollDown: [
-    'return/return1.png', 'return/return2.png', 'return/return3.png', 'return/return4.png',
-    'look/look00.png', 'look/look01.png',
-    'work/type1.png', 'work/type2.png', 'work/type3.png', 'work/type4.png'
+    'return/return1.webp', 'return/return2.webp', 'return/return3.webp', 'return/return4.webp',
+    'look/look00.webp', 'look/look01.webp',
+    'work/type1.webp', 'work/type2.webp', 'work/type3.webp', 'work/type4.webp'
   ],
   typingLoop: [
-    'work/type1.png', 'work/type2.png', 'work/type3.png', 'work/type4.png'
+    'work/type1.webp', 'work/type2.webp', 'work/type3.webp', 'work/type4.webp'
   ],
   scrollUp: [
-    'work/type4.png', 'work/type3.png', 'work/type2.png', 'work/type1.png',
-    'look/look01.png', 'look/look00.png',
-    'return/return4.png', 'return/return3.png', 'return/return2.png', 'return/return1.png',
-    'wave/wave3.png', 'wave/wave2.png', 'wave/wave1.png', 'wave/wave2.png', 'wave/wave3.png', 'wave/wave2.png', 'wave/wave1.png',
-    'wave/wave2.png', 'wave/wave3.png', 'wave/wave2.png', 'wave/wave1.png'
+    'work/type4.webp', 'work/type3.webp', 'work/type2.webp', 'work/type1.webp',
+    'look/look01.webp', 'look/look00.webp',
+    'return/return4.webp', 'return/return3.webp', 'return/return2.webp', 'return/return1.webp',
+    'wave/wave3.webp', 'wave/wave2.webp', 'wave/wave1.webp', 'wave/wave2.webp', 'wave/wave3.webp', 'wave/wave2.webp', 'wave/wave1.webp',
+    'wave/wave2.webp', 'wave/wave3.webp', 'wave/wave2.webp', 'wave/wave1.webp'
   ],
-  reducedMotion: 'wave/wave3.png'
+  reducedMotion: 'wave/wave3.webp'
 };
 
 const FRAME_DURATION = 120; // 120ms per frame as requested
@@ -50,14 +50,18 @@ export function DeveloperAnimation() {
     frameIndex: number;
     lastTime: number;
     accumulatedTime: number;
-    imagesLoaded: boolean;
+    firstFrameReady: boolean;
+    waveFramesReady: boolean;
+    allFramesReady: boolean;
   }>({
     currentAnimState: 'INITIAL_WAVE',
     targetMode: 'WAVE',
     frameIndex: 0,
     lastTime: 0,
     accumulatedTime: 0,
-    imagesLoaded: false
+    firstFrameReady: false,
+    waveFramesReady: false,
+    allFramesReady: false
   });
 
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(() => {
@@ -80,37 +84,76 @@ export function DeveloperAnimation() {
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     const handleMediaChange = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
-    
-    // Add event listener (fallback for older browsers not strictly needed, but addEventListener is standard now)
     mediaQuery.addEventListener('change', handleMediaChange);
 
-    const allPaths = new Set([
-      ...FRAMES.initialLoad,
-      ...FRAMES.scrollDown,
-      ...FRAMES.typingLoop,
-      ...FRAMES.scrollUp,
-      FRAMES.reducedMotion
-    ]);
+    const loadImages = (paths: string[]): Promise<void> => {
+      return new Promise((resolve) => {
+        if (paths.length === 0) return resolve();
+        
+        let loaded = 0;
+        paths.forEach(path => {
+          if (imageCacheRef.current.has(path)) {
+            loaded++;
+            if (loaded === paths.length) resolve();
+            return;
+          }
+          
+          const img = new Image();
+          img.src = `/illustrations/developer/${path}`;
+          img.onload = () => {
+            imageCacheRef.current.set(path, img);
+            loaded++;
+            if (loaded === paths.length) resolve();
+          };
+          img.onerror = () => {
+            loaded++;
+            if (loaded === paths.length) resolve();
+          };
+        });
+      });
+    };
 
-    let loadedCount = 0;
-    allPaths.forEach(path => {
-      const img = new Image();
-      img.src = `/illustrations/developer/${path}`;
-      img.onload = () => {
-        loadedCount++;
-        imageCacheRef.current.set(path, img);
-        if (loadedCount === allPaths.size) {
-          stateRef.current.imagesLoaded = true;
-        }
+    const initPreload = async () => {
+      // 1. Priority 1: Load first frame immediately
+      await loadImages(['wave/wave1.webp']);
+      stateRef.current.firstFrameReady = true;
+
+      // 2. Priority 2: Load the rest of the wave frames
+      await loadImages(['wave/wave2.webp', 'wave/wave3.webp']);
+      stateRef.current.waveFramesReady = true;
+
+      // 3. Priority 3+: Load everything else progressively in the background
+      const loadRest = async () => {
+        const allOtherFrames = Array.from(new Set([
+          ...FRAMES.scrollDown,
+          ...FRAMES.typingLoop,
+          ...FRAMES.scrollUp,
+          FRAMES.reducedMotion
+        ])).filter(path => !path.startsWith('wave/')); // filter out already loaded
+
+        // Load returns first
+        const returns = allOtherFrames.filter(p => p.includes('return'));
+        await loadImages(returns);
+        
+        // Then looks
+        const looks = allOtherFrames.filter(p => p.includes('look'));
+        await loadImages(looks);
+
+        // Then work/type
+        const work = allOtherFrames.filter(p => p.includes('work'));
+        await loadImages(work);
+        
+        stateRef.current.allFramesReady = true;
       };
-      // In case of error, just count it so it doesn't block the rest
-      img.onerror = () => {
-        loadedCount++;
-        if (loadedCount === allPaths.size) {
-          stateRef.current.imagesLoaded = true;
-        }
-      };
-    });
+
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(() => loadRest());
+      } else {
+        setTimeout(loadRest, 500);
+      }
+    };
+
+    initPreload();
 
     return () => mediaQuery.removeEventListener('change', handleMediaChange);
   }, []);
@@ -128,7 +171,6 @@ export function DeveloperAnimation() {
       const img = imageCacheRef.current.get(imagePath);
       if (img && img.complete && img.naturalWidth !== 0) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        // Assuming we want to contain it, though illustrations should be square already
         const scale = Math.min(canvas.width / img.width, canvas.height / img.height);
         const w = img.width * scale;
         const h = img.height * scale;
@@ -157,7 +199,6 @@ export function DeveloperAnimation() {
       }
     };
 
-    // Use IntersectionObserver to stop animating when out of view
     if (canvasRef.current) {
       updateCanvasSize();
       resizeObserver = new ResizeObserver(() => updateCanvasSize());
@@ -165,7 +206,6 @@ export function DeveloperAnimation() {
       observer = new IntersectionObserver((entries) => {
         isVisible = entries[0].isIntersecting;
         if (isVisible) {
-          // Reset last time when coming back into view to prevent time jumps
           stateRef.current.lastTime = performance.now();
         }
       });
@@ -178,19 +218,29 @@ export function DeveloperAnimation() {
         return;
       }
 
-      if (prefersReducedMotion) {
-        if (stateRef.current.imagesLoaded) {
-          drawFrame(FRAMES.reducedMotion);
-        }
-        return; // Don't request next frame, static.
+      const s = stateRef.current;
+
+      // Progressive loading fallbacks
+      if (!s.firstFrameReady) {
+        // Do nothing until first frame is ready
+        animationFrameId = requestAnimationFrame(loop);
+        return;
       }
 
-      const s = stateRef.current;
+      if (prefersReducedMotion) {
+        if (s.waveFramesReady) {
+          drawFrame(FRAMES.reducedMotion);
+        } else {
+          drawFrame('wave/wave1.webp'); // Static fallback while loading
+        }
+        return; 
+      }
+
       if (!s.lastTime) s.lastTime = timestamp;
       const deltaTime = timestamp - s.lastTime;
       s.lastTime = timestamp;
       
-      // Prevent massive jumps if tab is backgrounded
+      // Prevent massive jumps
       if (deltaTime > 1000) {
           s.accumulatedTime = 0;
       } else {
@@ -198,11 +248,17 @@ export function DeveloperAnimation() {
       }
 
       // Check if we need to advance frame
-      if (s.accumulatedTime >= FRAME_DURATION && s.imagesLoaded) {
-        // Prevent huge build-up, just take one frame duration
+      if (s.accumulatedTime >= FRAME_DURATION) {
         s.accumulatedTime -= FRAME_DURATION;
         if (s.accumulatedTime >= FRAME_DURATION) {
           s.accumulatedTime = 0;
+        }
+
+        // If wave frames aren't fully loaded, hold on the first frame statically
+        if (!s.waveFramesReady && s.currentAnimState === 'INITIAL_WAVE') {
+          drawFrame('wave/wave1.webp');
+          animationFrameId = requestAnimationFrame(loop);
+          return;
         }
 
         let currentSequence: string[];
@@ -220,7 +276,7 @@ export function DeveloperAnimation() {
             
           case 'REST_WAVE3':
             drawFrame(FRAMES.initialLoad[FRAMES.initialLoad.length - 1]); // wave3
-            if (s.targetMode === 'WORK') {
+            if (s.targetMode === 'WORK' && s.allFramesReady) {
               s.currentAnimState = 'SCROLL_DOWN_TRANSITION';
               s.frameIndex = 0;
             }
@@ -261,7 +317,7 @@ export function DeveloperAnimation() {
             
           case 'REST_WAVE1':
             drawFrame(FRAMES.scrollUp[FRAMES.scrollUp.length - 1]); // wave1
-            if (s.targetMode === 'WORK') {
+            if (s.targetMode === 'WORK' && s.allFramesReady) {
               s.currentAnimState = 'SCROLL_DOWN_TRANSITION';
               s.frameIndex = 0;
             }
@@ -283,9 +339,7 @@ export function DeveloperAnimation() {
 
   // Scroll handler
   useEffect(() => {
-    // Only capture initial Y if we can
     scrollRef.current.lastY = window.scrollY;
-
     let ticking = false;
 
     const handleScroll = () => {
@@ -295,9 +349,7 @@ export function DeveloperAnimation() {
           const delta = currentY - scrollRef.current.lastY;
           scrollRef.current.lastY = currentY;
 
-          // Only care if delta is significant to avoid tiny jumps
           if (Math.abs(delta) > 0) {
-            // Reset accumulator if scrolling changed direction
             if (Math.sign(delta) !== Math.sign(scrollRef.current.accumulatedDelta)) {
               scrollRef.current.accumulatedDelta = 0;
             }
@@ -305,11 +357,9 @@ export function DeveloperAnimation() {
             scrollRef.current.accumulatedDelta += delta;
 
             if (scrollRef.current.accumulatedDelta > SCROLL_THRESHOLD) {
-              // Scrolled down meaningfully
               stateRef.current.targetMode = 'WORK';
               scrollRef.current.accumulatedDelta = 0;
             } else if (scrollRef.current.accumulatedDelta < -SCROLL_THRESHOLD) {
-              // Scrolled up meaningfully
               stateRef.current.targetMode = 'WAVE';
               scrollRef.current.accumulatedDelta = 0;
             }
