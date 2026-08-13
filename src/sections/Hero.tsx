@@ -72,11 +72,9 @@ export function Hero() {
 
   const contentMaskVariants = {
     hidden: {
-      clipPath: 'inset(calc(50% - 18px) calc(50% - 18px) calc(50% - 18px) calc(50% - 18px) rounded 4px)',
       opacity: 0
     },
     visible: {
-      clipPath: 'inset(0% 0% 0% 0% rounded 0px)',
       opacity: 1,
       transition: {
         duration: 1.25,
