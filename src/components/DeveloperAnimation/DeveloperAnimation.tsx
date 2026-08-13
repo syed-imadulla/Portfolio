@@ -381,7 +381,7 @@ export function DeveloperAnimation() {
       style={{
         display: 'block'
       }}
-      aria-label="Animation showing a developer working at a desk"
+      aria-label="Syed Imadulla developer illustration"
       role="img"
     />
   );
