@@ -82,11 +82,11 @@ To run this project locally:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/syed-imadulla/imadulla-portfolio.git
+   git clone https://github.com/syed-imadulla/imadulla.dev.git
    ```
 2. Navigate into the directory:
    ```bash
-   cd imadulla-portfolio
+   cd imadulla.dev
    ```
 3. Install dependencies:
    ```bash
