@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
 
 interface NavItem {
   label: string;
@@ -62,39 +61,51 @@ export function Header() {
             onClick={() => setIsOpen(true)}
             aria-label="Open Menu"
           >
-            <Menu color="#ffffff" size={24} />
+            <span className="menu-bracket">[</span> ≡ <span className="menu-bracket">]</span>
           </button>
         </nav>
       </div>
 
       <div className={`dropdown-menu-overlay ${isOpen ? 'show' : ''}`}>
-        <button
-          className="dropdown-close-btn"
-          onClick={() => setIsOpen(false)}
-          aria-label="Close Menu"
-        >
-          <X size={32} />
-        </button>
+        <div className="dropdown-menu-header">
+          <a href="#hero" className="header-logo-link" onClick={(e) => handleScroll(e, '#hero')}>
+            <span className="logo-icon-sys">~</span>
+            SYED<span>_</span>IMADULLA
+          </a>
+          <button
+            className="dropdown-close-btn"
+            onClick={() => setIsOpen(false)}
+            aria-label="Close Menu"
+          >
+            <span className="menu-bracket">[</span> &times; <span className="menu-bracket">]</span>
+          </button>
+        </div>
 
-        <nav className="dropdown-nav">
-          <ul className="dropdown-nav-list">
-            {NAV_ITEMS.map((item, index) => (
-              <li
-                key={item.label}
-                className="dropdown-nav-item"
-                style={{ animationDelay: `${index * 0.03}s` }}
-              >
-                <a
-                  href={item.href}
-                  className="dropdown-nav-link"
-                  onClick={(e) => handleScroll(e, item.href)}
+        <div className="dropdown-menu-content">
+          <div className="dropdown-menu-label">01 / MENU</div>
+          <nav className="dropdown-nav">
+            <ul className="dropdown-nav-list">
+              {NAV_ITEMS.map((item, index) => (
+                <li
+                  key={item.label}
+                  className="dropdown-nav-item"
+                  style={{ animationDelay: `${index * 0.04}s` }}
                 >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+                  <a
+                    href={item.href}
+                    className="dropdown-nav-link"
+                    onClick={(e) => handleScroll(e, item.href)}
+                  >
+                    <span className="dropdown-nav-num">0{index + 1}</span>
+                    <span className="dropdown-nav-text">{item.label}</span>
+                    <span className="dropdown-nav-marker">●</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div className="dropdown-menu-footer">SYS // IMADULLA</div>
+        </div>
       </div>
     </header>
   );
