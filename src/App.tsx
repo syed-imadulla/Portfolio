@@ -17,7 +17,30 @@ import './styles/components.css';
 import './styles/sections.css';
 
 export function App() {
-  const [introComplete, setIntroComplete] = useState(false);
+  const [introComplete, setIntroComplete] = useState(() => {
+    if (typeof window !== 'undefined' && window.performance) {
+      const navEntries = window.performance.getEntriesByType('navigation');
+      if (navEntries.length > 0) {
+        const nav = navEntries[0] as PerformanceNavigationTiming;
+        
+        if (nav.type === 'reload') {
+          // If transferSize >= encodedBodySize, the browser fully downloaded 
+          // the document from the network, meaning cache was bypassed (Hard Refresh).
+          // If it's a normal refresh, transferSize is 0 (disk cache) or < encodedBodySize (304 Not Modified).
+          const isHardRefresh = nav.transferSize > 0 && nav.transferSize >= nav.encodedBodySize;
+          
+          if (isHardRefresh) {
+            sessionStorage.removeItem('introComplete');
+            return false;
+          }
+          
+          return sessionStorage.getItem('introComplete') === 'true';
+        }
+      }
+    }
+    
+    return sessionStorage.getItem('introComplete') === 'true';
+  });
 
   useEffect(() => {
     // Lock scrolling while the intro is active
@@ -32,6 +55,7 @@ export function App() {
   }, [introComplete]);
 
   const handleIntroComplete = useCallback(() => {
+    sessionStorage.setItem('introComplete', 'true');
     setIntroComplete(true);
   }, []);
 
